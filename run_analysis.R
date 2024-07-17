@@ -135,3 +135,4 @@ library(reshape2)
 pivotedData <- melt(cleanDataSet, id=c("activity_id","activity_description", "subject_id"), measure.vars = c(4:82))
 
 tidyDataSet <- dcast(tidyDataSet, activity_id + subject_id ~variable, mean)
+write.table(tidyDataSet, "./data/tidyDataSet.txt", row.name=FALSE)
